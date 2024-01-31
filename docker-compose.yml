@@ -1,0 +1,9 @@
+services:
+  myrestapp:
+    image: go-gin-ntfy-image
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - env-file

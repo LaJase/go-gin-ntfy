@@ -29,14 +29,14 @@ func Send_dummy_message() {
 
 func QueryDatabaseNotion(c *gin.Context) {
 	SECRET := os.Getenv("NOTION_SECRET_TOKEN")
-	NOTION_DB_ID := os.Getenv("NOTINOTION_DB_IDON_DB_ID")
+	NOTION_DB_ID := os.Getenv("NOTION_DB_ID")
 	client := notion.NewClient(SECRET)
 
 	query := notion.DatabaseQuery{
 		// Filter: &notion.DatabaseQueryFilter{},
 		Sorts: []notion.DatabaseQuerySort{
 			{
-				Property: "Task name",
+				Property: "Name",
 				// Timestamp: "",
 				Direction: "ascending",
 			},
